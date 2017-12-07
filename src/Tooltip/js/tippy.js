@@ -154,7 +154,12 @@ class Tippy {
   show(popper, customDuration) {
     if (this.state.destroyed) return
 
+    console.log('this.store', this.store);
+
     const data = find(this.store, data => data.popper === popper)
+
+    console.log('data', data);
+
     const { tooltip, circle, content } = getInnerElements(popper)
 
     if (!document.body.contains(data.el)) {
@@ -354,6 +359,8 @@ class Tippy {
       console.warn('Aborted: update() should not be used if `html` is a DOM element')
       return
     }
+
+    console.log('html', html);
 
     content.innerHTML = html
       ? document.getElementById(html.replace('#', '')).innerHTML

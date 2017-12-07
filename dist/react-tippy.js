@@ -2186,9 +2186,13 @@ var Tippy = function () {
 
       if (this.state.destroyed) return;
 
+      console.log('this.store', this.store);
+
       var data = (0, _find2.default)(this.store, function (data) {
         return data.popper === popper;
       });
+
+      console.log('data', data);
 
       var _getInnerElements = (0, _getInnerElements5.default)(popper),
           tooltip = _getInnerElements.tooltip,
@@ -2403,6 +2407,8 @@ var Tippy = function () {
         console.warn('Aborted: update() should not be used if `html` is a DOM element');
         return;
       }
+
+      console.log('html', html);
 
       content.innerHTML = html ? document.getElementById(html.replace('#', '')).innerHTML : el.getAttribute('title') || el.getAttribute('data-original-title');
 

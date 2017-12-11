@@ -1,6 +1,6 @@
 {
   "name": "@zipdrug/react-tippy",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "React tippy",
   "main": "dist/react-tippy.js",
   "author": "Khoa Thai",
@@ -31,11 +31,11 @@
     "flow-bin": "^0.42.0",
     "lodash-webpack-plugin": "^0.11.2",
     "mocha": "^3.2.0",
-    "react": "^15.5.3",
-    "react-dom": "^15.5.3",
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
     "react-redux": "^5.0.5",
-    "react-scripts": "0.9.5",
-    "recompose": "^0.23.1",
+    "react-scripts": "1.0.17",
+    "recompose": "^0.26.0",
     "redux": "^3.7.1",
     "redux-state-action": "^1.0.8",
     "redux-thunk": "^2.2.0",
@@ -47,6 +47,6 @@
     "start": "react-scripts start"
   },
   "dependencies": {
-    "popper.js": "^1.11.1"
+    "popper.js": "^1.12.9"
   }
 }

@@ -7,7 +7,7 @@
 		exports["reactTippy"] = factory(require("react"), require("popper.js"), require("react-dom"));
 	else
 		root["reactTippy"] = factory(root["React"], root["Popper"], root["ReactDOM"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_13__, __WEBPACK_EXTERNAL_MODULE_38__, __WEBPACK_EXTERNAL_MODULE_39__) {
+})(this, function(__WEBPACK_EXTERNAL_MODULE_9__, __WEBPACK_EXTERNAL_MODULE_38__, __WEBPACK_EXTERNAL_MODULE_39__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -16,9 +16,9 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	function __webpack_require__(moduleId) {
 /******/
 /******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
+/******/ 		if(installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
-/******/
+/******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
@@ -119,12 +119,11 @@ var Selectors = exports.Selectors = {
   ARROW: '[x-arrow]',
   TOOLTIPPED_EL: '[data-tooltipped]',
   CONTROLLER: '[data-tippy-controller]'
-};
 
-/**
-* The default settings applied to each instance
-*/
-var Defaults = exports.Defaults = {
+  /**
+  * The default settings applied to each instance
+  */
+};var Defaults = exports.Defaults = {
   html: false,
   position: 'top',
   animation: 'shift',
@@ -159,13 +158,12 @@ var Defaults = exports.Defaults = {
   popperOptions: {},
   open: undefined,
   onRequestClose: function onRequestClose() {}
-};
 
-/**
-* The keys of the defaults object for reducing down into a new object
-* Used in `getIndividualSettings()`
-*/
-var DefaultsKeys = exports.DefaultsKeys = Browser.SUPPORTED && Object.keys(Defaults);
+  /**
+  * The keys of the defaults object for reducing down into a new object
+  * Used in `getIndividualSettings()`
+  */
+};var DefaultsKeys = exports.DefaultsKeys = Browser.SUPPORTED && Object.keys(Defaults);
 
 /***/ }),
 /* 1 */
@@ -367,6 +365,12 @@ var matches = exports.matches = typeof window === 'undefined' ? defaultMatchSele
 
 /***/ }),
 /* 9 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_9__;
+
+/***/ }),
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -380,7 +384,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(13);
+var _react = __webpack_require__(9);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -686,7 +690,7 @@ Tooltip.defaultProps = defaultProps;
 exports.default = Tooltip;
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -782,7 +786,7 @@ function followCursorHandler(e) {
 }
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -806,7 +810,7 @@ function getOffsetDistanceInPx(distance) {
 }
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -833,12 +837,6 @@ function removeTitle(el) {
 }
 
 /***/ }),
-/* 13 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_13__;
-
-/***/ }),
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -849,11 +847,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = __webpack_require__(13);
+var _react = __webpack_require__(9);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _component = __webpack_require__(9);
+var _component = __webpack_require__(10);
 
 var _component2 = _interopRequireDefault(_component);
 
@@ -888,7 +886,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.withTooltip = exports.Tooltip = undefined;
 
-var _component = __webpack_require__(9);
+var _component = __webpack_require__(10);
 
 var _component2 = _interopRequireDefault(_component);
 
@@ -979,6 +977,7 @@ function bindEventListeners() {
       var ref = (0, _find2.default)(_globals.Store, function (ref) {
         return ref.popper === popper;
       });
+      if (!ref) return;
       var interactive = ref.settings.interactive;
 
       if (interactive) return;
@@ -1046,7 +1045,7 @@ var _getCorePlacement = __webpack_require__(3);
 
 var _getCorePlacement2 = _interopRequireDefault(_getCorePlacement);
 
-var _getOffsetDistanceInPx = __webpack_require__(11);
+var _getOffsetDistanceInPx = __webpack_require__(12);
 
 var _getOffsetDistanceInPx2 = _interopRequireDefault(_getOffsetDistanceInPx);
 
@@ -1181,7 +1180,7 @@ var _getInnerElements2 = __webpack_require__(6);
 
 var _getInnerElements3 = _interopRequireDefault(_getInnerElements2);
 
-var _getOffsetDistanceInPx = __webpack_require__(11);
+var _getOffsetDistanceInPx = __webpack_require__(12);
 
 var _getOffsetDistanceInPx2 = _interopRequireDefault(_getOffsetDistanceInPx);
 
@@ -1283,7 +1282,7 @@ var _evaluateSettings = __webpack_require__(21);
 
 var _evaluateSettings2 = _interopRequireDefault(_evaluateSettings);
 
-var _removeTitle = __webpack_require__(12);
+var _removeTitle = __webpack_require__(13);
 
 var _removeTitle2 = _interopRequireDefault(_removeTitle);
 
@@ -1828,7 +1827,7 @@ exports.default = mountPopper;
 
 var _globals = __webpack_require__(0);
 
-var _followCursorHandler = __webpack_require__(10);
+var _followCursorHandler = __webpack_require__(11);
 
 var _followCursorHandler2 = _interopRequireDefault(_followCursorHandler);
 
@@ -1956,6 +1955,10 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _globals = __webpack_require__(0);
 
+var _react = __webpack_require__(9);
+
+var _react2 = _interopRequireDefault(_react);
+
 var _reactDom = __webpack_require__(39);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
@@ -1980,7 +1983,7 @@ var _findIndex = __webpack_require__(34);
 
 var _findIndex2 = _interopRequireDefault(_findIndex);
 
-var _removeTitle = __webpack_require__(12);
+var _removeTitle = __webpack_require__(13);
 
 var _removeTitle2 = _interopRequireDefault(_removeTitle);
 
@@ -2012,7 +2015,7 @@ var _noop = __webpack_require__(36);
 
 var _noop2 = _interopRequireDefault(_noop);
 
-var _followCursorHandler = __webpack_require__(10);
+var _followCursorHandler = __webpack_require__(11);
 
 var _followCursorHandler2 = _interopRequireDefault(_followCursorHandler);
 
@@ -2186,20 +2189,16 @@ var Tippy = function () {
 
       if (this.state.destroyed) return;
 
-      console.log('this.store', this.store);
-
       var data = (0, _find2.default)(this.store, function (data) {
         return data.popper === popper;
       });
-
-      console.log('data', data);
 
       var _getInnerElements = (0, _getInnerElements5.default)(popper),
           tooltip = _getInnerElements.tooltip,
           circle = _getInnerElements.circle,
           content = _getInnerElements.content;
 
-      if (!document.body.contains(data.el)) {
+      if (!data || data && !document.body.contains(data.el)) {
         this.destroy(popper);
         return;
       }
@@ -2318,11 +2317,12 @@ var Tippy = function () {
       // Prevent hide if open
 
 
+      if (!data) return;
       if (data.settings.disabled === false && data.settings.open) {
         return;
       }
 
-      var isUnmount = data && data.settings && data.settings.unmountHTMLWhenHide && data.settings.reactDOM;
+      var isUnmount = data.settings && data.settings.unmountHTMLWhenHide && data.settings.reactDOM;
       // end: custom react
 
       var el = data.el,
@@ -2408,7 +2408,9 @@ var Tippy = function () {
         return;
       }
 
-      console.log('html', html);
+      if (_react2.default.isValidElement(html)) {
+        return;
+      }
 
       content.innerHTML = html ? document.getElementById(html.replace('#', '')).innerHTML : el.getAttribute('title') || el.getAttribute('data-original-title');
 
@@ -2431,6 +2433,7 @@ var Tippy = function () {
       var data = (0, _find2.default)(this.store, function (data) {
         return data.popper === popper;
       });
+      if (!data) return;
 
       var el = data.el,
           popperInstance = data.popperInstance,

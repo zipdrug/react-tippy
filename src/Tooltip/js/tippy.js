@@ -4,6 +4,7 @@ import {
   Selectors,
   Defaults
 } from './core/globals'
+import React from 'react';
 import ReactDOM from 'react-dom'
 
 import init from './core/init'
@@ -154,15 +155,10 @@ class Tippy {
   show(popper, customDuration) {
     if (this.state.destroyed) return
 
-    console.log('this.store', this.store);
-
     const data = find(this.store, data => data.popper === popper)
-
-    console.log('data', data);
-
     const { tooltip, circle, content } = getInnerElements(popper)
 
-    if (!document.body.contains(data.el)) {
+    if (!data || (data && !document.body.contains(data.el))) {
       this.destroy(popper)
       return
     }
@@ -272,11 +268,12 @@ class Tippy {
 
     // custom react
     // Prevent hide if open
+    if (!data) return;
     if (data.settings.disabled === false && data.settings.open) {
       return;
     }
 
-    const isUnmount = data && data.settings && data.settings.unmountHTMLWhenHide && data.settings.reactDOM;
+    const isUnmount = data.settings && data.settings.unmountHTMLWhenHide && data.settings.reactDOM;
     // end: custom react
 
     const {
@@ -360,11 +357,13 @@ class Tippy {
       return
     }
 
-    console.log('html', html);
+    if (React.isValidElement(html)) {
+      return;
+    }
 
     content.innerHTML = html
       ? document.getElementById(html.replace('#', '')).innerHTML
-      : el.getAttribute('title') || el.getAttribute('data-original-title')
+      : el.getAttribute('title') || el.getAttribute('data-original-title');
 
     if (!html) removeTitle(el)
   }
@@ -378,6 +377,7 @@ class Tippy {
     if (this.state.destroyed) return
 
     const data = find(this.store, data => data.popper === popper)
+    if (!data) return;
 
     const {
       el,

@@ -1,5 +1,5 @@
 {
-  "name": "@zipdrug/react-tippy",
+  "name": "zipdrug-react-tippy",
   "version": "1.2.5",
   "description": "React tippy",
   "main": "dist/react-tippy.js",
